@@ -14,15 +14,16 @@ namespace Arrange_ArrayAscending
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                int currElement = numbers[i]; // we take the first number of the numbers[]
+                // int currElement = numbers[i]; // we take the first number of the numbers[]
 
-                for (int j = i+1; j < numbers.Length; j++)  // We rotate from second number to end number
+                for (int j = i + 1; j < numbers.Length; j++)  // We rotate from second number to end number
                 {
-                    if (currElement > numbers[j])  // if this is true
+                    if (numbers[i] > numbers[j])  // if this is true
                     {
+                        int tempNumb = numbers[i];
                         numbers[i] = numbers[j]; // we change their places; ---second number become first
-                        numbers[j] = currElement; // first number becomes second 
-                        currElement = numbers[i]; // we have a new first number--minNumber so we reinitialize the currNumber
+                        numbers[j] = tempNumb; // first number becomes second 
+                                               // we have a new first number--minNumber so we reinitialize the currNumber
                     }
                 }
             }
@@ -32,7 +33,7 @@ namespace Arrange_ArrayAscending
             {
                 Console.WriteLine(item);
             }
-            
+
 
 
         }
